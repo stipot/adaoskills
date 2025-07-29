@@ -1,6 +1,6 @@
 name: AlarmSkill
 version: 0.1.0
-description: Простой голосовой будильник
+description: Альтернативный голосовой будильник
 entrypoint: handlers/main.py
 intents:
   - set.intent
