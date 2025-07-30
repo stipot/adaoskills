@@ -90,7 +90,7 @@ def run_prep(skill_path: Path):
     with open(skill_path / "prep_result.json", "w", encoding="utf-8") as f:
         json.dump(prep_result, f, indent=2)
 
-    with open(skill_path / "prep_prompt.md", "w", encoding="utf-8") as f:
+    with open(skill_path / "prep_result_prompt.md", "w", encoding="utf-8") as f:
         if prep_result["status"] == "ok":
             f.write(f"# {_('prep.summary_header')}\n\n")
             f.write(f"## {_('prep.collected_resources')}\n")
