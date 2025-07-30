@@ -1,11 +1,8 @@
-name: weather_skill
-version: 0.1.0
+name: WeatherSkill
+version: 1.0
 description: Навык прогноза погоды на сегодня
-entrypoint: handlers/main.py
+permissions:
+  - network.http
+  - audio.speak
 intents:
   - get_weather
-permissions:
-  - audio.speak
-triggers:
-  - voice: "поставь будильник на *"
-  - voice: "отмени будильник"
