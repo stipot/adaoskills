@@ -1,16 +1,11 @@
-name: AlarmSkill
+name: weather_skill
 version: 0.1.0
-description: Простой голосовой будильник
+description: Навык прогноза погоды на сегодня
 entrypoint: handlers/main.py
 intents:
-  - set.intent
-  - cancel.intent
+  - get_weather
 permissions:
-  - time.access
   - audio.speak
-  - alarm.set
-  - alarm.cancel
-  - audio.playback
 triggers:
   - voice: "поставь будильник на *"
   - voice: "отмени будильник"
