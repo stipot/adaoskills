@@ -1,0 +1,9 @@
+
+Задача: написать навык "weather_skill".
+Результаты подготовки:
+{
+  "internet": true,
+  "api_key": "c36f20a73e34677fe737d20b5387f9d4",
+  "default_city": "Moscow",
+  "api_entry_point": "https://api.openweathermap.org/data/2.5/weather"
+}
