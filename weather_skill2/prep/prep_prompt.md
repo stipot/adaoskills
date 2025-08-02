@@ -10,7 +10,7 @@ Based on the user request, generate a Python script `prepare.py` that will run t
 - Before developing the skill, we need to gather environment data, validate hypotheses, and collect required parameters from the user if needed.
 - The `prepare.py` must finish by creating **two files**:
   1. `prep_result.json` — JSON with preparation results (collected data, tested hypotheses, final status).
-  2. `prep_result_prompt.md` — markdown file summarizing collected data for the next stage (LLM-assisted skill development).
+  2. `prep_prompt.md` — markdown file summarizing collected data for the next stage (LLM-assisted skill development).
 
 ## Mandatory structure
 
@@ -61,7 +61,7 @@ Must contain the following structure:
   - ❌ <hypothesis name>
   ```
 
-- If `status` = `"failed"`:
+* If `status` = `"failed"`:
 
   ```
   # Preparation Failed
@@ -124,7 +124,7 @@ intents:
 
    This dictionary provides default English strings for i18n.
 8. All steps must be logged to `logs/prep.log` using i18n keys, not raw strings.
-9. At the end of execution, always create `prep_result.json` and `prep_result_prompt.md`.
+9. At the end of execution, always create `prep_result.json` and `prep_prompt.md`.
 10. Code comments and variable names must be in English.
 11. Hypotheses must be tested with minimal user input:
     - Use known constants (e.g., API entry points) when possible.
