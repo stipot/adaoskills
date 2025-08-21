@@ -1,27 +1,15 @@
-name: weather_skill
-version: 1.0.0
-description: Навык для получения текущей погоды на сегодня
+name: "new_skill"
+version: "0.1.0"
+entry: "handlers/main.py"
+
 runtime:
   python: "3.11"
-dependencies:
-  - requests>=2.31
-events:
-  subscribe:
-    - "nlp.intent.weather.get"
-  publish:
-    - "ui.notify"
-tools:
-  - name: "get_weather"
-    input_schema:
-      type: object
-      required: [city]
-      properties:
-        city: { type: string, minLength: 1 }
-    output_schema:
-      type: object
-      required: [ok]
-      properties:
-        ok: { type: boolean }
-        city: { type: string }
-        temp: { type: number }
-        description: { type: string }
+
+# Необязательные поля — можно оставить пустыми,
+# валидатор подставит значения по умолчанию.
+description: ""
+dependencies: []
+events: {}
+tools: []
+exports: {}
+
