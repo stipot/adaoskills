@@ -3,20 +3,23 @@ import os
 from datetime import datetime, timedelta
 import threading
 import time
-from runtime.sdk.audio import speak
+from adaos.sdk.audio import speak
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), '../config.json')
-RESPONSES_PATH = os.path.join(os.path.dirname(__file__), '../assets/responses/')
+CONFIG_PATH = os.path.join(os.path.dirname(__file__), "../config.json")
+RESPONSES_PATH = os.path.join(os.path.dirname(__file__), "../assets/responses/")
+
 
 def load_config():
     if os.path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH, 'r') as f:
+        with open(CONFIG_PATH, "r") as f:
             return json.load(f)
     return {}
 
+
 def save_config(cfg):
-    with open(CONFIG_PATH, 'w') as f:
+    with open(CONFIG_PATH, "w") as f:
         json.dump(cfg, f)
+
 
 def set_alarm(time_str):
     alarm_time = datetime.strptime(time_str, "%H:%M").time()
@@ -35,9 +38,11 @@ def set_alarm(time_str):
 
     threading.Thread(target=wait_and_ring).start()
 
+
 def cancel_alarm():
     save_config({})
     speak("Будильник отменён", emotion="sad")
+
 
 def handle(intent, entities):
     if intent == "set_alarm":
