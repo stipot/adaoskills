@@ -1,5 +1,5 @@
 name: weather_skill
-version: 1.0.0
+version: 1.0.2
 description: Навык для получения текущей погоды на сегодня
 runtime:
   python: "3.11"
