@@ -3,7 +3,6 @@ import os
 from datetime import datetime, timedelta
 import threading
 import time
-from adaos.sdk.audio import speak
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "../config.json")
 RESPONSES_PATH = os.path.join(os.path.dirname(__file__), "../assets/responses/")
@@ -30,7 +29,7 @@ def set_alarm(time_str):
 
     cfg = {"alarm": alarm_dt.isoformat()}
     save_config(cfg)
-    speak("Будильник установлен", emotion="happy")
+    print("Будильник установлен", emotion="happy")
 
     def wait_and_ring():
         time.sleep((alarm_dt - datetime.now()).total_seconds())
@@ -41,7 +40,7 @@ def set_alarm(time_str):
 
 def cancel_alarm():
     save_config({})
-    speak("Будильник отменён", emotion="sad")
+    print("Будильник отменён", emotion="sad")
 
 
 def handle(intent, entities):
