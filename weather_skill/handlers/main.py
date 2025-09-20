@@ -4,10 +4,10 @@ from typing import Dict, Optional, Tuple
 import requests
 
 from adaos.sdk.skills.i18n import _
-from adaos.sdk.context import get_current_skill
-from adaos.sdk.decorators import subscribe, tool
-from adaos.sdk.bus import emit
-from adaos.sdk.skill_memory import get as get_env, set as set_env
+from adaos.sdk.data.context import get_current_skill
+from adaos.sdk.core.decorators import subscribe, tool
+from adaos.sdk.data.bus import emit
+from adaos.sdk.data.skill_memory import get as get_env, set as set_env
 from adaos.services.agent_context import get_ctx
 
 """   ```
@@ -16,7 +16,7 @@ from adaos.services.agent_context import get_ctx
 
   ```python
   city = entities.get("city") or get("last_city") or get_env("default_city") """
-from adaos.sdk.skill_memory import get, set
+from adaos.sdk.data.skill_memory import get, set
 
 
 # ---------------------------
